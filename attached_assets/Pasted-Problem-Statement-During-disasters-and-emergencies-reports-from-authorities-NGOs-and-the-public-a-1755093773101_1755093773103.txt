@@ -1,0 +1,89 @@
+Problem Statement
+During disasters and emergencies, reports from authorities, NGOs, and the public are often written in inconsistent, messy, or informal ways — for example:
+
+Using abbreviations (“TN” for Tamil Nadu, “DL” for Delhi)
+
+Misspellings (“New Dlhi” instead of New Delhi)
+
+Local language names (“தமிழ்நாடு” for Tamil Nadu)
+
+Short codes or nicknames used by locals
+
+These reports are frequently unstructured (SMS, social media posts, PDFs, voice messages) and multilingual, making it difficult for disaster management teams to:
+
+Accurately identify the exact geographic location.
+
+Link that location to real-time data on affected populations and available resources.
+
+Prioritize aid based on shortage severity.
+
+Current disaster management systems either focus on location detection or resource dashboards, but they rarely combine:
+
+Multilingual and abbreviation-tolerant location extraction.
+
+Context-based location disambiguation.
+
+Real-time resource shortage analysis (food, shelter, etc.).
+
+This gap delays rapid and precise allocation of relief efforts.
+
+Proposed Solution
+We propose to develop an Intelligent Location Finder and Crisis Resource Dashboard that:
+
+Extracts & standardizes place names from messy, multilingual, and abbreviation-rich text reports.
+
+Resolves ambiguous names using contextual clues in the report.
+
+Links places to live or stored humanitarian datasets (e.g., number of people with/without food and shelter).
+
+Calculates shortage percentages and assigns an automatic severity score.
+
+Provides text and voice chatbot interaction so responders can query location data in natural language.
+
+Displays results on a map-based dashboard with detailed charts.
+
+This system will integrate Natural Language Processing (NLP), geospatial intelligence, fuzzy matching, and real-time humanitarian datasets into a single, unified platform.
+
+Tools & Technologies Required
+Backend & Core Processing
+Python – main programming language.
+
+FastAPI – backend framework for APIs.
+
+PostgreSQL + PostGIS – geospatial database for storing locations and resource data.
+
+Elasticsearch – fast place name search and fuzzy matching.
+
+NLP & AI Models
+spaCy / Stanza – Named Entity Recognition (NER) for location extraction.
+
+Hugging Face Transformers – multilingual NLP models for better accuracy.
+
+rapidfuzz – for abbreviation and typo matching.
+
+Cohere API – for chatbot reasoning, query understanding, and summarization.
+
+geopy / OpenStreetMap Nominatim API – for geocoding and reverse geocoding.
+
+GeoNames Database – place name gazetteer.
+
+Data Sources
+Humanitarian Data Exchange (HDX) – structured crisis datasets.
+
+ReliefWeb API – disaster reports.
+
+Social media APIs – real-time crowdsourced updates.
+
+Frontend & Visualization
+React.js – interactive dashboard.
+
+Leaflet.js / Mapbox – for mapping and location visualization.
+
+Chart.js / D3.js – charts for food/shelter statistics.
+
+Extra Intelligence Layer
+Tesseract OCR – extract text from scanned or image-based reports.
+
+OpenAI Whisper or Vosk – convert voice messages to text.
+
+Machine Learning models – for context-based location disambiguation.
