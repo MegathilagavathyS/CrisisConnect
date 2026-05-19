@@ -4,7 +4,7 @@ import { storage } from "./storage";
 import { insertReportSchema, insertLocationSchema, insertChatMessageSchema } from "@shared/schema";
 import { extractLocationsFromText, getLocationCoordinates, calculateResourceSeverity } from "./services/nlp";
 import { cohereService } from "./services/cohere";
-import { identifyGeospatialEntities, formatGeospatialOutput } from "./services/geospatial-query";
+const { identifyGeospatialEntities, formatGeospatialOutput } = require("./services/geospatial-query-ml");
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Location extraction endpoint

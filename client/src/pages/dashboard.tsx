@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import LocationExtractor from "@/components/location-extractor";
-import GeospatialQuery from "@/components/geospatial-query";
+import GeospatialQueryML from "@/components/geospatial-query-ml";
 import ResourceMap from "@/components/resource-map";
 import ResourceCharts from "@/components/resource-charts";
 import ResourceSummary from "@/components/resource-summary";
@@ -9,7 +9,7 @@ import Chatbot from "@/components/chatbot";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { MapPin, Clock, RotateCcw, Search, Globe } from "lucide-react";
+import { MapPin, Clock, RotateCcw, Search, Globe, Brain } from "lucide-react";
 import { DashboardStats } from "@/lib/types";
 
 export default function Dashboard() {
@@ -67,8 +67,8 @@ export default function Dashboard() {
                 Extract
               </TabsTrigger>
               <TabsTrigger value="geospatial-query" className="text-xs">
-                <Globe className="w-3 h-3 mr-1" />
-                Query
+                <Brain className="w-3 h-3 mr-1" />
+                ML Query
               </TabsTrigger>
             </TabsList>
             
@@ -77,7 +77,7 @@ export default function Dashboard() {
             </TabsContent>
             
             <TabsContent value="geospatial-query" className="flex-1 mt-0">
-              <GeospatialQuery />
+              <GeospatialQueryML />
             </TabsContent>
           </Tabs>
 
